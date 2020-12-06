@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace sokolenko03DN
 {
@@ -136,7 +137,19 @@ namespace sokolenko03DN
                 OutputStudent(i);
             }
         }
-            
+        
+        public static void WriteStContainerToFile(string path, StudentContainer writtenContainer)
+        {
+
+            using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
+            {
+
+                foreach (var i in writtenContainer)
+                {
+                    sw.WriteLine(i);
+                }
+            }
+        }
 
     }
 }

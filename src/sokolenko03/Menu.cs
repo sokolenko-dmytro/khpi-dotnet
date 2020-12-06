@@ -6,6 +6,7 @@ namespace sokolenko03DN
     {
         public static void Start()
         {
+            const string path = @"C:\Users\Дмитрий Соколенко\source\repos\DotNet\sokolenko03DN\file.txt";
             var pigsty = new StudentContainer();
             char choice = 'a';
 
@@ -36,6 +37,8 @@ namespace sokolenko03DN
                         break;
                 }
             }
+
+            Io.WriteStContainerToFile(path, pigsty);
         }
 
         private static void PrintMenu()
