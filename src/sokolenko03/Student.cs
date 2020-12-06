@@ -7,7 +7,7 @@ namespace sokolenko03DN
     public class Student
     {
         public string LastName { get; set; }
-        public string FirstName { get; set; } // todo 
+        public string FirstName { get; set; }
         public string Patronymic { get; set; }
         public DateTime BirthDate { get; set; }
         public DateTime EnterDate { get; set; }
@@ -56,6 +56,13 @@ namespace sokolenko03DN
                 $"EnterDate: {EnterDate.ToString("d")}\nGroup Index: {GroupIndex}\n" +
                 $"Faculty: {Faculty}\nSpecialization: {Specialization}\nPerformance: {Performance}\n";
         }
+
+        public string ToInfoString()
+        {
+            return $"{LastName}|{FirstName}|{Patronymic}|{BirthDate.ToString("d")}|" +
+                $"{EnterDate.ToString("d")}|{GroupIndex}|{Faculty}|{Specialization}|{Performance}";
+        }
+
 
     }
 }

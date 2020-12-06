@@ -47,7 +47,7 @@ namespace sokolenko03DN
             Console.Write("Performance: ");
             double newPerformance = InputDouble();
 
-            return new Student(newLastName, //todo var
+            return new Student(newLastName, 
             newFirstName,
             newPatronymic,
             newBirthDate,
@@ -141,14 +141,65 @@ namespace sokolenko03DN
         public static void WriteStContainerToFile(string path, StudentContainer writtenContainer)
         {
 
-            using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
+            try
             {
-
-                foreach (var i in writtenContainer)
+                using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
                 {
-                    sw.WriteLine(i);
+
+                    foreach (var i in writtenContainer)
+                    {
+                        sw.WriteLine(i.ToInfoString());
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
+
+        public static void ReadStContainerFromFile(string path, StudentContainer readContainer)
+        {
+            try
+            {
+                using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        var infoStudent = line.Split(new char[] { '|' });
+
+                        readContainer.AddStudent(new Student(infoStudent[0],
+                            infoStudent[1],
+                            infoStudent[2],
+                            DateTime.Parse(infoStudent[3]),
+                            DateTime.Parse(infoStudent[4]),
+                            char.Parse(infoStudent[5]),
+                            infoStudent[6],
+                            infoStudent[7],
+                            double.Parse(infoStudent[8])));
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public static void PrintPropertyList()
+        {
+            Console.WriteLine("Choose what you want to edit:\n");
+            Console.WriteLine("1 - Last name");
+            Console.WriteLine("2 - First name");
+            Console.WriteLine("3 - Patronymic");
+            Console.WriteLine("4 - Birth date");
+            Console.WriteLine("5 - Enter date");
+            Console.WriteLine("6 - Group index");
+            Console.WriteLine("7 - Faculty");
+            Console.WriteLine("8 - Specialization");
+            Console.WriteLine("9 - Performance");   
         }
 
     }

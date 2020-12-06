@@ -13,6 +13,8 @@ namespace sokolenko03DN
             Console.WriteLine("Hello World! Our copany introduces the next level of data base - AllBase");
             Console.WriteLine("The array of Student object is created, my lord.");
 
+            Io.ReadStContainerFromFile(path, pigsty);
+
             while (choice != '0')
             {
                 PrintMenu();
@@ -28,12 +30,37 @@ namespace sokolenko03DN
                         pigsty.AddStudent(Io.InputStudent());
                         break;
                     case '3':
-                        Console.Write("Input the index: ");
-                        pigsty.DeleteStudent(Io.InputInt());
+                        if (pigsty.Size() > 0)
+                        {
+                            Console.Write("Input the index: ");
+                            pigsty.DeleteStudent(Io.InputInt());
+                        }
+                        else
+                        {
+                            Console.Write("Container is empty");
+                        }
                         break;
                     case '4':
-                        Console.Write("Input the index: ");
-                        pigsty.ShowByIndex(Io.InputInt());
+                        if (pigsty.Size() > 0)
+                        {
+                            Console.Write("Input the index: ");
+                            pigsty.ShowByIndex(Io.InputInt());
+                        }
+                        else
+                        {
+                            Console.Write("Container is empty");
+                        }
+                        break;
+                    case '5':
+                        if (pigsty.Size() > 0)
+                        {
+                            Console.Write("Input the index: ");
+                            pigsty.EditByIndex(Io.InputInt());
+                        }
+                        else
+                        {
+                            Console.Write("Container is empty");
+                        }
                         break;
                 }
             }
@@ -48,6 +75,7 @@ namespace sokolenko03DN
             Console.WriteLine("2 - Add new student");
             Console.WriteLine("3 - Delete student by index");
             Console.WriteLine("4 - Show by index");
+            Console.WriteLine("5 - Edit the student");
             Console.WriteLine("\n0 - Exit");
         }
     }

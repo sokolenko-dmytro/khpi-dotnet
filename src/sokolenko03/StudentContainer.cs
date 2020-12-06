@@ -55,11 +55,75 @@ namespace sokolenko03DN
 
             Io.OutputStudent(_students[index]);
         }
+
         public void ShowAll()
         {
             foreach (var i in _students)
             {
                 Io.OutputStudent(i);
+            }
+        }
+
+        public void EditByIndex(int index)
+        {
+
+            int day;
+            int month;
+            int year;
+
+            char choice = 'a';
+
+            Io.PrintPropertyList();
+            choice = Io.InputChar();
+
+            switch (choice)
+            {
+                case '1':
+                    Console.Write("Last name: ");
+                    _students[index].LastName = Io.InputName(); 
+                    break;
+                case '2':
+                    Console.Write("First name: ");
+                    _students[index].FirstName = Io.InputName();
+                    break;
+                case '3':
+                    Console.Write("Patronymic: ");
+                    _students[index].Patronymic = Io.InputName();
+                    break;
+                case '4':
+                    Console.Write("BirthDay: ");
+                    day = Io.InputInt();
+                    Console.Write("BirthMonth: ");
+                    month = Io.InputInt();
+                    Console.Write("BirthYear: ");
+                    year = Io.InputInt();
+                    _students[index].BirthDate = new DateTime(year, month, day);
+                    break;
+                case '5':
+                    Console.Write("EnterDay: ");
+                    day = Io.InputInt();
+                    Console.Write("EnterMonth: ");
+                    month = Io.InputInt();
+                    Console.Write("EnterYear: ");
+                    year = Io.InputInt();
+                    _students[index].EnterDate = new DateTime(year, month, day);
+                    break;
+                case '6':
+                    Console.Write("Group index: ");
+                    _students[index].GroupIndex = Io.InputChar();
+                    break;
+                case '7':
+                    Console.Write("Faculty: ");
+                    _students[index].Faculty = Io.InputName();
+                    break;
+                case '8':
+                    Console.Write("Specialization: ");
+                    _students[index].Specialization = Io.InputName();
+                    break;
+                case '9':
+                    Console.Write("Performance: ");
+                    _students[index].Performance = Io.InputDouble();
+                    break;
             }
         }
 
@@ -104,6 +168,11 @@ namespace sokolenko03DN
         }
 
         object IEnumerator.Current => _students[_index];
+
+        public int Size()
+        {
+            return _students.Length;
+        }
     }
 
 }
