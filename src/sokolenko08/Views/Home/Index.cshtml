@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<sokolenko08DN.Models.Student>
+
+<style type="text/css">
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<h3>Students</h3>
+
+
+<table style="width: 100%;">
+    <tr>
+        <th>Student</th>
+        <th>Age</th>
+        <th>Enter date</th>
+        <th>Group</th>
+        <th>Faculty</th>
+        <th>Specialty</th>
+        <th>Academic performance</th>
+    </tr>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@($"{s.Surname} {s.Name} {s.Patronymic}")</td>
+            <td>@($"{s.Age}")</td>
+            <td>@($"{s.EnterDate}")</td>
+            <td>@($"{s.Group}")</td>
+            <td>@($"{s.Faculty}")</td>
+            <td>@($"{s.Specialty}")</td>
+            <td>@($"{s.AcademicPerformance}")</td>
+        </tr>
+    }
+</table>
