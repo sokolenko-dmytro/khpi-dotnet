@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <LastName>Sokolenko</LastName>
+    <FirstName>Dmytro</FirstName>
+    <Patronymic>Mykolayoyvich</Patronymic>
+    <BirthDate>2001-02-01T00:00:00</BirthDate>
+    <EnterDate>2018-09-01T00:00:00</EnterDate>
+    <GroupIndex>v</GroupIndex>
+    <Faculty>CIT</Faculty>
+    <Specialization>IT-123</Specialization>
+    <Performance>98</Performance>
+  </Student>
+  <Student>
+    <LastName>Falopiev</LastName>
+    <FirstName>Oleg</FirstName>
+    <Patronymic>Victorovich</Patronymic>
+    <BirthDate>2000-03-01T00:00:00</BirthDate>
+    <EnterDate>2018-09-01T00:00:00</EnterDate>
+    <GroupIndex>C</GroupIndex>
+    <Faculty>CIT</Faculty>
+    <Specialization>IT-123</Specialization>
+    <Performance>99</Performance>
+  </Student>
+  <Student>
+    <LastName>Gelina</LastName>
+    <FirstName>Maya</FirstName>
+    <Patronymic>Vladimirovna</Patronymic>
+    <BirthDate>2003-07-07T00:00:00</BirthDate>
+    <EnterDate>2019-09-01T00:00:00</EnterDate>
+    <GroupIndex>C</GroupIndex>
+    <Faculty>CIT</Faculty>
+    <Specialization>IT-124</Specialization>
+    <Performance>100</Performance>
+  </Student>
+</ArrayOfStudent>
