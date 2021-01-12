@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Student>
-    <LastName>Sokolenko</LastName>
-    <FirstName>Dmytro</FirstName>
-    <Patronymic>Mykolayoyvich</Patronymic>
-    <BirthDate>2001-02-01T00:00:00</BirthDate>
-    <EnterDate>2018-09-01T00:00:00</EnterDate>
-    <GroupIndex>v</GroupIndex>
-    <Faculty>CIT</Faculty>
-    <Specialization>IT-123</Specialization>
-    <Performance>98</Performance>
+    <Id>0</Id>
+    <Surname>Surname1</Surname>
+    <Name>Name1</Name>
+    <Patronymic>Patronymic1</Patronymic>
+    <DateOfBirth>2000-01-12T00:00:00</DateOfBirth>
+    <EnterDate>2021-02-02T00:00:00</EnterDate>
+    <GroupIndex>GroupIndex1</GroupIndex>
+    <Faculty>Faculty1</Faculty>
+    <Specialty>Specialty1</Specialty>
+    <AcademicPerformance>21</AcademicPerformance>
   </Student>
   <Student>
-    <LastName>Falopiev</LastName>
-    <FirstName>Oleg</FirstName>
-    <Patronymic>Victorovich</Patronymic>
-    <BirthDate>2000-03-01T00:00:00</BirthDate>
-    <EnterDate>2018-09-01T00:00:00</EnterDate>
-    <GroupIndex>C</GroupIndex>
-    <Faculty>CIT</Faculty>
-    <Specialization>IT-123</Specialization>
-    <Performance>99</Performance>
+    <Id>1</Id>
+    <Surname>Surname3</Surname>
+    <Name>Name3</Name>
+    <Patronymic>Patronymic3</Patronymic>
+    <DateOfBirth>1998-01-12T00:00:00</DateOfBirth>
+    <EnterDate>2020-12-20T00:00:00</EnterDate>
+    <GroupIndex>GroupIndex3</GroupIndex>
+    <Faculty>Faculty3</Faculty>
+    <Specialty>Specialty3</Specialty>
+    <AcademicPerformance>21</AcademicPerformance>
   </Student>
   <Student>
-    <LastName>Gelina</LastName>
-    <FirstName>Maya</FirstName>
-    <Patronymic>Vladimirovna</Patronymic>
-    <BirthDate>2003-07-07T00:00:00</BirthDate>
-    <EnterDate>2019-09-01T00:00:00</EnterDate>
-    <GroupIndex>C</GroupIndex>
-    <Faculty>CIT</Faculty>
-    <Specialization>IT-124</Specialization>
-    <Performance>100</Performance>
+    <Id>2</Id>
+    <Surname>Surname5</Surname>
+    <Name>Name5</Name>
+    <Patronymic>Patronymic5</Patronymic>
+    <DateOfBirth>1996-01-12T00:00:00</DateOfBirth>
+    <EnterDate>2022-01-25T00:00:00</EnterDate>
+    <GroupIndex>GroupIndex5</GroupIndex>
+    <Faculty>Faculty5</Faculty>
+    <Specialty>Specialty5</Specialty>
+    <AcademicPerformance>21</AcademicPerformance>
   </Student>
 </ArrayOfStudent>

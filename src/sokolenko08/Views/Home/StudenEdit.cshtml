@@ -1,0 +1,66 @@
+﻿@{ Layout = null; }
+@model sokolenko08DN.Models.Student
+
+@{ var s = Model; }}
+
+<style type="text/css">
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<h3>Edit Student</h3>
+@using (Html.BeginForm("Index", "SaveStud", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+                @Html.HiddenFor(m => m.Id)
+                <table style="width: 100%;">
+                    <tr><th>Value Name</th><th>Current Value</th><th>Saved Value</th></tr>
+                    <tr>
+                        <td>Surname</td>
+                        <td>@($"{s.Surname} ")</td>
+                        <td>@Html.TextBoxFor(m => m.Surname)</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>@($" {s.Name} ")</td>
+                        <td>@Html.TextBoxFor(m => m.Name)</td>
+                    </tr>
+                    <tr>
+                        <td>Patronymic</td>
+                        <td>@($"{s.Patronymic}")</td>
+                        <td>  @Html.TextBoxFor(m => m.Patronymic)</td>
+                    </tr>
+                    <tr>
+                        <td>DateOfBirth</td>
+                        <td>@($"{s.DateOfBirth}")</td>
+                        <td>@Html.TextBoxFor(m => m.DateOfBirth)</td>
+                    </tr>
+                    <tr>
+                        <td>Enter date</td>
+                        <td>@($"{s.EnterDate}")</td>
+                        <td>@Html.TextBoxFor(m => m.EnterDate)</td>
+                    </tr>
+                    <tr>
+                        <td>GroupIndex</td>
+                        <td>@($"{s.GroupIndex}")</td>
+                        <td>@Html.TextBoxFor(m => m.GroupIndex)</td>
+                    </tr>
+                    <tr>
+                        <td>Faculty</td>
+                        <td>@($"{s.Faculty}")</td>
+                        <td>@Html.TextBoxFor(m => m.Faculty)</td>
+                    </tr>
+                    <tr>
+                        <td>Specialty</td>
+                        <td>@($"{s.Specialty}")</td>
+                        <td>@Html.TextBoxFor(m => m.Specialty)</td>
+                    </tr>
+                    <tr>
+                        <td>Academic performance</td>
+                        <td>@($"{s.AcademicPerformance}")</td>
+                        <td>@Html.TextBoxFor(m => m.AcademicPerformance)</td>
+                    </tr>
+
+                </table>
+                                <button>Save</button>}

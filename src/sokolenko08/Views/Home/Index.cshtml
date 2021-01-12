@@ -1,6 +1,4 @@
-﻿@{
-    Layout = null;
-}
+﻿@{ Layout = null; }
 @model IEnumerable<sokolenko08DN.Models.Student>
 
 <style type="text/css">
@@ -17,22 +15,27 @@
     <tr>
         <th>Student</th>
         <th>Age</th>
+        <th>DateOfBirth</th>
         <th>Enter date</th>
         <th>Group</th>
         <th>Faculty</th>
         <th>Specialty</th>
         <th>Academic performance</th>
+        <th><a href="@(Url.Action("Index", "GetStud"))">Add</a></th>
+        <th>Remove</th>
     </tr>
     @foreach (var s in Model)
     {
-        <tr>
-            <td>@($"{s.Surname} {s.Name} {s.Patronymic}")</td>
-            <td>@($"{s.Age}")</td>
-            <td>@($"{s.EnterDate}")</td>
-            <td>@($"{s.Group}")</td>
-            <td>@($"{s.Faculty}")</td>
-            <td>@($"{s.Specialty}")</td>
-            <td>@($"{s.AcademicPerformance}")</td>
-        </tr>
-    }
+<tr>
+    <td>@($"{s.Surname} {s.Name} {s.Patronymic}")</td>
+    <td>@($"{s.Age}")</td>
+    <td>@($"{s.DateOfBirth.ToString("dd.MM.yyyy")}")</td>
+    <td>@($"{s.EnterDate.ToString("dd.MM.yyyy")}")</td>
+    <td>@($"{s.Group}")</td>
+    <td>@($"{s.Faculty}")</td>
+    <td>@($"{s.Specialty}")</td>
+    <td>@($"{s.AcademicPerformance}")</td>
+    <td><a href="@(Url.Action("GetStud",new { id = s.Id }))">Edit</a></td>
+    <td><a href="@(Url.Action("RemoveStud",new { id = s.Id }))">Remove</a></td>
+</tr>}
 </table>

@@ -8,5 +8,7 @@ namespace sokolenko08DN.Models
         IEnumerable<Student> GetAll();
         Student Find(long id);
         Student Remove(long id);
+        void Update(Student item);
+        void SaveDb();
     }
 }

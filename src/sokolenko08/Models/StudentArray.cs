@@ -23,7 +23,10 @@ namespace sokolenko08DN.Models
             {
                 newArr[i] = Students[i];
             }
+            if (student.Id>0 || GetById(student.Id) !=null)
+                    student.Id = Students.Length;
             newArr[Students.Length] = student;
+
             Students = newArr;
             if (Empty && Students.Length > 0) Empty = false;
 
@@ -41,8 +44,12 @@ namespace sokolenko08DN.Models
 
         public Student GetById(long id)
         {
-            var studs = from s in Students where s.Id == id select s;
-            return studs.First();
+            if (id > 0)
+            {
+                var studs = from s in Students where s.Id == id select s;
+                return studs.First();
+            }
+            else return null;
         }
 
         public Student RemoveById(long id)
@@ -106,6 +113,8 @@ namespace sokolenko08DN.Models
             }
         }
 
+     
+
         public void Clear()
         {
             Students = new Student[0];
@@ -117,6 +126,7 @@ namespace sokolenko08DN.Models
             return Students[index];
         }
 
+       
         public void SetStudent(int index, Student student)
         {
             Students[index] = student;
@@ -166,5 +176,16 @@ namespace sokolenko08DN.Models
                 }
             }
         }
+        public int? GetIndex(Student item)
+        {
+            for (int i = 0; i < Students.Length; i++)
+                if (Students[i].Id.Equals(item.Id))
+                    return i;
+
+            return null;
+        }
+
+
+
     }
 }
